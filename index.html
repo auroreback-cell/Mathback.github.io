@@ -1,19 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Cours de Maths - Wiam</title>
+<meta charset="UTF-8">
+<title>Cours de Maths - Wiam</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #2c3e50;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* COULEURS PAR NIVEAU */
+.sixieme { border-top: 5px solid #27ae60; }
+.cinquieme { border-top: 5px solid #2980b9; }
+.quatrieme { border-top: 5px solid #e67e22; }
+.troisieme { border-top: 5px solid #c0392b; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>📚 Cours de Mathématiques</h1>
-<p>Choisis ton niveau :</p>
+<header>
+  <h1>📚 Cours de Mathématiques</h1>
+  <p>Choisis ton niveau pour accéder aux cours et exercices</p>
+</header>
 
-<ul>
-  <li><a href="6e.html">6e</a></li>
-  <li><a href="5e.html">5e</a></li>
-  <li><a href="4e.html">4e</a></li>
-  <li><a href="3e.html">3e</a></li>
-</ul>
+<div class="container">
+
+  <div class="grid">
+
+    <a href="sixieme/" class="card sixieme">
+      <h2>6e</h2>
+      <p>Découvrir les bases</p>
+    </a>
+
+    <a href="5e/" class="card cinquieme">
+      <h2>5e</h2>
+      <p>Approfondir les notions</p>
+    </a>
+
+    <a href="4e/" class="card quatrieme">
+      <h2>4e</h2>
+      <p>Se perfectionner</p>
+    </a>
+
+    <a href="3e/" class="card troisieme">
+      <h2>3e</h2>
+      <p>Se préparer au brevet</p>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>© Wiam - Cours de mathématiques</p>
+</footer>
 
 </body>
 </html>
