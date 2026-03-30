@@ -2,131 +2,112 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Maths 5e - Wiam</title>
+<title>Mathématiques 5e</title>
 
 <style>
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f6f9;
+    font-family: Arial;
+    margin: 0;
+    background: #f4f6f8;
 }
 
-/* MENU */
-nav {
-  background: #2c3e50;
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: white;
-  margin: 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* HEADER */
 header {
-  background: #3498db;
-  color: white;
-  padding: 40px;
-  text-align: center;
+    background: #1a73e8;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-/* SECTIONS */
-section {
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
+.container {
+    width: 90%;
+    margin: auto;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.chapter {
+    background: white;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-h2 {
-  color: #2c3e50;
+.chapter-title {
+    padding: 15px;
+    cursor: pointer;
+    background: #e8f0fe;
+    font-weight: bold;
 }
 
-/* BOUTONS */
-a.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #3498db;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
+.chapter-content {
+    display: none;
+    padding: 15px;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2c3e50;
-  color: white;
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 </style>
-
 </head>
 
 <body>
 
-<nav>
-  <a href="../index.html">Accueil</a>
-  <a href="#cours">Cours</a>
-  <a href="#exercices">Exercices</a>
-</nav>
-
 <header>
-  <h1>📚 Mathématiques - 5e</h1>
-  <p>Bienvenue sur ton espace de travail</p>
+    <h1>📘 Mathématiques 5e</h1>
+    <a href="../index.html" style="color:white;">⬅ Retour accueil</a>
 </header>
 
-<section id="cours">
-  <h2>📘 Cours</h2>
+<div class="container">
 
-  <div class="card">
-    <h3>Priorités opératoires</h3>
-    <p>Règles de calcul et exemples.</p>
-    <a class="button" href="priorites.pdf">Voir le cours</a>
-  </div>
+    <div class="chapter">
+        <div class="chapter-title" onclick="toggleChapter(this)">
+            Chapitre 1 – Nombres relatifs
+        </div>
 
-  <div class="card">
-    <h3>Fractions</h3>
-    <p>Comprendre et calculer avec les fractions.</p>
-    <a class="button" href="fractions.pdf">Voir le cours</a>
-  </div>
+        <div class="chapter-content">
 
-  <div class="card">
-    <h3>Nombres relatifs</h3>
-    <p>Addition et soustraction.</p>
-    <a class="button" href="relatifs.pdf">Voir le cours</a>
-  </div>
+            <a class="btn" href="pdf/ch1_cours.pdf">📘 Cours</a>
+            <a class="btn" href="pdf/ch1_exercices.pdf">📝 Exercices</a>
 
-</section>
+            <button class="btn" onclick="toggleCorrige('c1')">✅ Corrigé</button>
+            <div id="c1" style="display:none;">
+                <a class="btn" href="pdf/ch1_corrige.pdf">Voir corrigé</a>
+            </div>
 
-<section id="exercices">
-  <h2>✏️ Exercices</h2>
+            <button class="btn" onclick="toggleVideo('v1')">🎬 Vidéo</button>
+            <div id="v1" style="display:none;">
+                <video width="600" controls>
+                    <source src="videos/ch1.mp4" type="video/mp4">
+                </video>
+            </div>
 
-  <div class="card">
-    <h3>Exercices Priorités</h3>
-    <a class="button" href="exo_priorites.pdf">S'entraîner</a>
-  </div>
+        </div>
+    </div>
 
-  <div class="card">
-    <h3>Exercices Fractions</h3>
-    <a class="button" href="exo_fractions.pdf">S'entraîner</a>
-  </div>
+</div>
 
-</section>
+<script>
+function toggleChapter(el) {
+    const content = el.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+}
 
-<footer>
-  <p>© Wiam - Cours de maths</p>
-</footer>
+function toggleCorrige(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "none";
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+}
+
+function toggleVideo(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
