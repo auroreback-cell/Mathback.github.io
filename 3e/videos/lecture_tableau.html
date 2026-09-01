@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lire une image et un antécédent dans un tableau de valeurs — 3ème</title>
+<style>
+  :root {
+    --ink: #1a2332;
+    --paper: #f7f5f0;
+    --blue: #2454a6;
+    --blue-deep: #16335e;
+    --red: #b3392f;
+    --yellow: #9a7b16;
+    --line: #d8d2c4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Georgia", "Iowan Old Style", serif;
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    margin: 0 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    line-height: 1.2;
+    margin: 0 0 1.6rem;
+    color: var(--blue-deep);
+  }
+
+  .video-frame {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 1.8rem;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .method {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    border-left: 3px solid var(--blue);
+    padding: 0.2rem 0 0.2rem 1.1rem;
+    margin: 2rem 0;
+  }
+
+  .method h2 {
+    font-size: 0.95rem;
+    text-transform: none;
+    color: var(--blue-deep);
+    margin: 0 0 0.7rem;
+  }
+
+  .method.antecedent { border-left-color: var(--yellow); }
+  .method.antecedent h2 { color: var(--yellow); }
+
+  .method ol {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .method li { margin-bottom: 0.45rem; }
+  .method li:last-child { margin-bottom: 0; }
+
+  table.demo {
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+  }
+
+  table.demo th, table.demo td {
+    border: 1px solid var(--ink);
+    padding: 0.55rem 0.9rem;
+    text-align: center;
+  }
+
+  table.demo th { background: #ece7da; }
+
+  .note {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #5a5346;
+    border-top: 1px solid var(--line);
+    padding-top: 1.4rem;
+    margin-top: 2.2rem;
+  }
+
+  .note strong { color: var(--red); }
+
+  a { color: var(--blue); }
+
+  .back {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--blue-deep);
+    border-bottom: 1px solid var(--blue-deep);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Mathématiques · 3ème · Fonctions</p>
+  <h1>Lire une image et un antécédent dans un tableau de valeurs</h1>
+
+  <div class="video-frame">
+    <video controls preload="metadata" poster="poster_tableau.png">
+      <source src="lecture_tableau_valeurs.mp4" type="video/mp4">
+      Ton navigateur ne prend pas en charge la lecture vidéo.
+      <a href="lecture_tableau_valeurs.mp4">Télécharger la vidéo</a>.
+    </video>
+  </div>
+
+  <table class="demo">
+    <tr>
+      <th>x (Antécédent)</th><td>−2</td><td>−1</td><td>0</td><td>1</td>
+    </tr>
+    <tr>
+      <th>g(x) (Image)</th><td>−5</td><td>−3</td><td>−1</td><td>0</td>
+    </tr>
+  </table>
+
+  <div class="method">
+    <h2>Trouver une image (ligne du haut → ligne du bas)</h2>
+    <ol>
+      <li>Chercher le nombre dans la ligne du haut (x)</li>
+      <li>Lire le nombre situé juste en dessous</li>
+      <li>C'est l'image de ce nombre</li>
+    </ol>
+  </div>
+
+  <div class="method antecedent">
+    <h2>Trouver un antécédent (ligne du bas → ligne du haut)</h2>
+    <ol>
+      <li>Chercher le nombre dans la ligne du bas (g(x))</li>
+      <li>Lire le nombre situé juste au-dessus</li>
+      <li>C'est un antécédent de ce nombre</li>
+    </ol>
+  </div>
+
+  <p>Sur l'exemple de la vidéo&nbsp;: l'image de <strong>1</strong> par <strong>g</strong> est <strong>0</strong>, donc <strong>g(1) = 0</strong>. Un antécédent de <strong>−5</strong> par <strong>g</strong> est <strong>−2</strong>, donc <strong>g(−2) = −5</strong>.</p>
+
+  <p class="note">
+    <strong>À retenir&nbsp;:</strong> on lit toujours dans le sens indiqué par la question — de <em>x</em> vers <em>g(x)</em> pour une image, de <em>g(x)</em> vers <em>x</em> pour un antécédent. Le sens de lecture change, mais la méthode reste la même&nbsp;: chercher une valeur dans une ligne, lire l'autre juste à côté.
+  </p>
+
+  <a class="back" href="index.html">&larr; Retour au cours de 3ème</a>
+
+</div>
+</body>
+</html>
