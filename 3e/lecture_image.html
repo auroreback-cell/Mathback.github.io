@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lire l'image d'un nombre sur un graphique — 3ème</title>
+<style>
+  :root {
+    --ink: #1a2332;
+    --paper: #f7f5f0;
+    --blue: #2454a6;
+    --blue-deep: #16335e;
+    --red: #b3392f;
+    --line: #d8d2c4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Georgia", "Iowan Old Style", serif;
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    margin: 0 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    line-height: 1.2;
+    margin: 0 0 1.6rem;
+    color: var(--blue-deep);
+  }
+
+  .video-frame {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 1.8rem;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .method {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    border-left: 3px solid var(--blue);
+    padding: 0.2rem 0 0.2rem 1.1rem;
+    margin: 2rem 0;
+  }
+
+  .method h2 {
+    font-size: 0.95rem;
+    text-transform: none;
+    color: var(--blue-deep);
+    margin: 0 0 0.7rem;
+  }
+
+  .method ol {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .method li {
+    margin-bottom: 0.45rem;
+  }
+
+  .method li:last-child {
+    margin-bottom: 0;
+  }
+
+  .note {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #5a5346;
+    border-top: 1px solid var(--line);
+    padding-top: 1.4rem;
+    margin-top: 2.2rem;
+  }
+
+  .note strong { color: var(--red); }
+
+  a { color: var(--blue); }
+
+  .back {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--blue-deep);
+    border-bottom: 1px solid var(--blue-deep);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Mathématiques · 3ème · Fonctions</p>
+  <h1>Lire l'image d'un nombre sur une représentation graphique</h1>
+
+  <div class="video-frame">
+    <video controls preload="metadata" poster="poster.png">
+      <source src="lecture_image_fonction.mp4" type="video/mp4">
+      Ton navigateur ne prend pas en charge la lecture vidéo.
+      <a href="lecture_image_fonction.mp4">Télécharger la vidéo</a>.
+    </video>
+  </div>
+
+  <div class="method">
+    <h2>Méthode rappelée dans la vidéo</h2>
+    <ol>
+      <li>Repérer <em>a</em> sur l'axe des abscisses</li>
+      <li>Tracer une droite verticale jusqu'à la courbe</li>
+      <li>Depuis ce point, tracer une droite horizontale jusqu'à l'axe des ordonnées</li>
+      <li>Lire la valeur obtenue : c'est l'image de <em>a</em></li>
+    </ol>
+  </div>
+
+  <p>Sur l'exemple de la vidéo, on lit l'image de <strong>1,5</strong> sur la courbe de <strong>g(x) = x²</strong>, et on trouve <strong>g(1,5) = 2,25</strong>.</p>
+
+  <p class="note">
+    <strong>À retenir&nbsp;:</strong> contrairement à un antécédent, l'image d'un nombre est toujours unique — il n'y a jamais deux droites verticales possibles à tracer pour un même point de départ.
+  </p>
+
+  <a class="back" href="../index.html">&larr; Retour au cours de 3ème</a>
+
+</div>
+</body>
+</html>
